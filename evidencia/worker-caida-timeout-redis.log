@@ -1,0 +1,96 @@
+22:51:05 | INFO     | app.observability | Trazas activas en LangSmith, proyecto 'due-diligence-pe7'
+22:51:07 | INFO     | langgraph.checkpoint.redis.aio | Redis client is a standalone client
+22:51:07 | INFO     | due_diligence.corpus | Corpus: 120 fragmentos de 5 startups + mercado y fondo
+22:51:09 | INFO     | due_diligence.busqueda_web | Sin TAVILY_API_KEY: buscar_mercado usa el corpus local de mercado
+22:51:09 | INFO     | app.worker | Worker listo: hasta 5 jobs simultáneos
+Traceback (most recent call last):
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1286, in read_response
+    response = await self._read_response_from_parser(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1335, in _read_response_from_parser
+    return await self._parser.read_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding, push_request=push_request
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\_parsers\resp3.py", line 185, in read_response
+    response = await self._read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding, push_request=push_request
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\_parsers\resp3.py", line 197, in _read_response
+    raw = await self._readline()
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\_parsers\base.py", line 587, in _readline
+    data = await self._stream.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 562, in readline
+    line = await self.readuntil(sep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 677, in readuntil
+    await self._wait_for_data('readuntil')
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1283, in read_response
+    async with timeout_context as active_timeout:
+               ^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Lib\asyncio\timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\app\worker.py", line 290, in <module>
+    sys.exit(asyncio.run(main()))
+             ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 721, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\app\worker.py", line 268, in main
+    await worker.correr()
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\app\worker.py", line 81, in correr
+    tomado = await self.store.tomar(self.app_settings.worker_espera_cola_s)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\app\jobs.py", line 189, in tomar
+    crudo = await self.redis.blmove(self.cola, self.procesando, espera_s, "LEFT", "RIGHT")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\client.py", line 946, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\client.py", line 871, in _send_command_parse_response
+    return await self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\client.py", line 993, in parse_response
+    response = await connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Proyectos\Material-20261102T164748Z-1-001\Material\Preentrega7\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1310, in read_response
+    raise TimeoutError(f"Timeout reading from {host_error}")
+redis.exceptions.TimeoutError: Timeout reading from periwinkleish-sense-driftwood-77040.db.redis.io:19125

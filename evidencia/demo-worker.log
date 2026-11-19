@@ -1,0 +1,90 @@
+23:22:00 | INFO     | app.observability | Trazas activas en LangSmith, proyecto 'due-diligence-pe7-produccion'
+23:22:01 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:22:01 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:22:01 | INFO     | langgraph.checkpoint.redis.aio | Redis client is a standalone client
+23:22:02 | INFO     | due_diligence.corpus | Corpus: 120 fragmentos de 5 startups + mercado y fondo
+23:22:03 | INFO     | due_diligence.busqueda_web | Sin TAVILY_API_KEY: buscar_mercado usa el corpus local de mercado
+23:22:03 | INFO     | app.worker | Worker listo: hasta 5 jobs simultáneos
+23:22:11 | INFO     | app.worker | Job 62b2e7cd (vozactiva) tomado de la cola: iniciar -> running
+23:22:12 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 1: guarda aplicada (decisión determinística, sin LLM) -> investigador
+23:22:37 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19c-9316-7429-a84a-2e2edf99e87f.')
+23:22:37 | INFO     | due_diligence.agents.react | investigador, ronda 1: registrar_metricas
+23:22:53 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19c-f1ed-7684-a567-e1266aaded4d.')
+23:22:53 | INFO     | due_diligence.agents.react | investigador, ronda 2: registrar_hallazgos
+23:23:16 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19d-32d7-76e9-b0c1-658d1b07b3d5.')
+23:23:16 | INFO     | due_diligence.agents.react | investigador, ronda 3: registrar_hallazgos
+23:23:41 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19d-8aa2-720c-9750-13b69e7614af.')
+23:23:41 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 2: guarda aplicada (decisión determinística, sin LLM) -> analista
+23:23:51 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19d-efb7-77da-b30a-390be820b642.')
+23:23:51 | INFO     | due_diligence.agents.react | analista, ronda 1: calcular_costo_llm, estimar_tamano_mercado
+23:23:58 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19e-12fc-7449-8014-95c2807936c9.')
+23:23:58 | INFO     | due_diligence.agents.react | analista, ronda 2: calcular_unit_economics
+23:24:08 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19e-2fd2-72dd-8272-bf904e5b9e45.')
+23:24:08 | INFO     | due_diligence.agents.react | analista, ronda 3: calcular_scoring
+23:24:17 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19e-588b-76c0-a8dc-170a70b258f5.')
+23:24:17 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 3: guarda aplicada (decisión determinística, sin LLM) -> critico
+23:24:24 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19e-7c28-7482-acc8-b0a39a00aacf.')
+23:24:24 | INFO     | due_diligence.agents.react | critico, ronda 1: contrastar_metricas, buscar_evidencia, buscar_evidencia, buscar_evidencia
+23:24:31 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19e-964d-74fc-aa9b-20373892ecc3.')
+23:24:31 | INFO     | due_diligence.agents.react | critico, ronda 2: registrar_observaciones
+23:24:38 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19e-b2fd-7745-b68f-69e02a3942d2.')
+23:24:38 | INFO     | due_diligence.agents.react | critico, ronda 3: registrar_observaciones
+23:24:46 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19e-cdfd-71bc-854b-291bbd1c7d5c.')
+23:24:46 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 4: guarda aplicada (decisión determinística, sin LLM) -> finalizar
+23:24:50 | INFO     | app.worker | Job 62b2e7cd: NO AVANZAR -> done (emitida sin pausa: descarte claro: NO AVANZAR con score 41, a más de 5 puntos de cualquier umbral y con la validación sin salvedades)
+23:24:53 | INFO     | app.worker | Job b9dce131 (lupacode) tomado de la cola: iniciar -> running
+23:24:54 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 1: guarda aplicada (decisión determinística, sin LLM) -> investigador
+23:25:12 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19f-0b27-75a2-8ef4-417b695b3105.')
+23:25:12 | INFO     | due_diligence.agents.react | investigador, ronda 1: registrar_metricas
+23:25:31 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19f-51f5-7012-822a-a0e409a36d91.')
+23:25:31 | INFO     | due_diligence.agents.react | investigador, ronda 2: registrar_metricas
+23:25:47 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19f-9b6d-7240-bfc5-84a80c8782d5.')
+23:25:47 | INFO     | due_diligence.agents.react | investigador, ronda 3: registrar_metricas
+23:26:01 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19f-d9a4-71d5-9236-0fae8e69fb75.')
+23:26:01 | INFO     | due_diligence.agents.react | investigador, ronda 4: registrar_metricas
+23:26:29 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a0-10bc-72c5-ae8d-fa0195459eba.')
+23:26:29 | INFO     | due_diligence.agents.react | investigador, ronda 5: registrar_hallazgos
+23:26:43 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a0-7d8c-71a5-a63d-430a7878a0bd.')
+23:26:43 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 2: guarda aplicada (decisión determinística, sin LLM) -> analista
+23:26:50 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a0-b708-731b-bbba-eb3bb9cd1b7a.')
+23:26:50 | INFO     | due_diligence.agents.react | analista, ronda 1: calcular_costo_llm, estimar_tamano_mercado
+23:26:54 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a0-d07e-75d0-aa44-0ed0a85ab1ad.')
+23:26:54 | INFO     | due_diligence.agents.react | analista, ronda 2: calcular_unit_economics
+23:27:01 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a0-e0b1-7634-a4ac-e1312442662b.')
+23:27:01 | INFO     | due_diligence.agents.react | analista, ronda 3: calcular_scoring
+23:27:06 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a0-f987-735f-9bc1-d5690f5bbdce.')
+23:27:06 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 3: guarda aplicada (decisión determinística, sin LLM) -> critico
+23:27:11 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a1-11b4-7655-87b9-811c6e589683.')
+23:27:11 | INFO     | due_diligence.agents.react | critico, ronda 1: contrastar_metricas, buscar_evidencia, buscar_evidencia, buscar_evidencia
+23:27:19 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a1-2401-760a-82d5-1a7fb41af350.')
+23:27:19 | INFO     | due_diligence.agents.react | critico, ronda 2: registrar_observaciones
+23:27:26 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a1-4211-72ae-bc02-99d5ba967e53.')
+23:27:27 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 4: guarda aplicada (decisión determinística, sin LLM) -> finalizar
+23:27:30 | INFO     | app.worker | Job b9dce131: PROFUNDIZAR, caso crítico (recomendación positiva (PROFUNDIZAR): compromete capital o avanza de etapa) -> awaiting_approval; checkpoint en Redis
+23:27:33 | INFO     | app.worker | Job b9dce131 (lupacode) tomado de la cola: reanudar -> running
+23:27:34 | INFO     | app.worker | Job b9dce131: se reanuda el hilo desde el checkpoint de Redis con la decisión 'otra_vuelta'
+23:27:53 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a1-a169-758e-9d1f-dc73bf7c13dc.')
+23:27:53 | INFO     | due_diligence.agents.react | analista, ronda 1: calcular_costo_llm, estimar_tamano_mercado
+23:27:57 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a1-c4a6-71ec-95e2-7fab555498f8.')
+23:27:57 | INFO     | due_diligence.agents.react | analista, ronda 2: calcular_unit_economics
+23:28:03 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a1-d5a8-76ce-a4b7-736b11e031f6.')
+23:28:03 | INFO     | due_diligence.agents.react | analista, ronda 3: calcular_unit_economics
+23:28:08 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a1-ebf0-7311-8cf1-62de735d592f.')
+23:28:08 | INFO     | due_diligence.agents.react | analista, ronda 4: calcular_scoring
+23:28:16 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_error callback: TracerException('No indexed run ID 01a1f1a2-008e-700e-a769-5fb1f6096f96.')
+23:28:19 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a2-20d5-75a7-b1dc-1b716bde7ffd.')
+23:28:19 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 6: guarda aplicada (decisión determinística, sin LLM) -> critico
+23:28:28 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a2-2e63-744b-8f63-b6426674ac35.')
+23:28:28 | INFO     | due_diligence.agents.react | critico, ronda 1: contrastar_metricas, buscar_evidencia, buscar_evidencia
+23:28:34 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a2-4fe4-7127-b7f4-b127fff5f6fc.')
+23:28:34 | INFO     | due_diligence.agents.react | critico, ronda 2: registrar_observaciones
+23:28:40 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a2-6660-76f6-9fc7-d3f6ec3177f5.')
+23:28:40 | INFO     | due_diligence.agents.react | critico, ronda 3: registrar_observaciones
+23:28:47 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a2-7e62-765e-80d9-c5f2d4b401b6.')
+23:28:47 | INFO     | due_diligence.agents.react | critico, ronda 4: registrar_observaciones
+23:28:55 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f1a2-98fa-77f1-8cb4-b44f94834bf1.')
+23:28:55 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 7: guarda aplicada (decisión determinística, sin LLM) -> finalizar
+23:28:58 | INFO     | app.worker | Job b9dce131: PROFUNDIZAR, caso crítico (el comité ya intervino en este análisis (pidió otra vuelta): decide el cierre; recomendación positiva (PROFUNDIZAR): compromete capital o avanza de etapa) -> awaiting_approval; checkpoint en Redis
+23:29:00 | INFO     | app.worker | Job b9dce131 (lupacode) tomado de la cola: reanudar -> running
+23:29:01 | INFO     | app.worker | Job b9dce131: se reanuda el hilo desde el checkpoint de Redis con la decisión 'aprobar'
+23:29:05 | INFO     | app.worker | Job b9dce131: PROFUNDIZAR -> done (aprobada por el comité)

@@ -1,0 +1,33 @@
+API ok · Redis ok · observabilidad: {'plataforma': 'langsmith', 'activa': True, 'proyecto': 'due-diligence-pe7-produccion'}
+Lanzando 5 peticiones concurrentes: vozactiva, contralia, aulaviva, anamnesis, lupacode
+  POST vozactiva  -> d1b886ec3fff495aa184003be5a265c4 en 161.3 ms
+  POST contralia  -> c85ecaadbc984e93bad1d48b2951d8ed en 1072.8 ms
+  POST aulaviva   -> d116edb605f14f1697cc9ba4b7f605a2 en 415.0 ms
+  POST anamnesis  -> c999c037fd23438dac300da618db1087 en 1084.2 ms
+  POST lupacode   -> f2ea79da46654ce5a926ccebb6ab4210 en 1082.2 ms
+  vozactiva  cerró a los  325.0 s · NO AVANZAR · done (EMITIDA SIN PAUSA)
+  anamnesis  crítico: en pausa a los  376.5 s · PROFUNDIZAR · lo decide el comité simulado
+  contralia  crítico: en pausa a los  391.7 s · AVANZAR A COMITÉ · lo decide el comité simulado
+  aulaviva   cerró a los  428.8 s · SIN RECOMENDACIÓN · done (EMITIDA SIN PAUSA)
+  lupacode   crítico: en pausa a los  458.1 s · PROFUNDIZAR · lo decide el comité simulado
+
+startup    estado    recomendación      crítico  POST ms  cola s  grafo s  total s  LLM  costo USD
+--------------------------------------------------------------------------------------------------
+vozactiva  done      NO AVANZAR         no         161.3     2.0    321.2    325.0   16    0.02355
+contralia  done      AVANZAR A COMITÉ   sí        1072.8     2.0    388.4    397.6   16    0.02651
+aulaviva   done      SIN RECOMENDACIÓN  no         415.0     1.0    426.2    428.8   16    0.02363
+anamnesis  done      PROFUNDIZAR        sí        1084.2     2.0    373.0    382.5   14    0.02082
+lupacode   done      PROFUNDIZAR        sí        1082.2     1.0    453.7    464.0   22    0.03809
+
+5 peticiones · 3 críticas (pasaron por el comité) · estados {'done': 5} · modelos ['gemini-3.1-flash-lite', 'gemini-3.5-flash-lite']
+  respuesta del POST     p50   1072.8 ms · p95   1083.8 ms · máx 1084.2 ms
+  espera en cola         p50      2.0 s · p95      2.0 s · máx 2.0 s
+  ejecución del grafo    p50   388.43 s · p95   448.17 s · máx 453.66 s
+  total (cliente)        p50    397.6 s · p95   456.96 s · máx 464.0 s
+  costo propio           total USD 0.132589 · promedio por análisis USD 0.026518 · 84 llamadas (16.8 por análisis)
+  nota: con N = 5 el p95 converge al máximo de la serie (para benchmarking, 30 a 50 corridas)
+
+Tokens por agente:  investigador 41.5 % · critico 30.8 % · analista 27.4 % · supervisor 0.4 %
+Segundos por nodo:  investigador 40.2 % · analista 29.5 % · critico 28.6 % · supervisor 1.3 % · cierre 0.2 % · aprobacion 0.1 % · validador 0.1 % · informe 0.0 % · triage 0.0 %
+
+Evidencia: evidencia\carga-5-20261118-2314.json

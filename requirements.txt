@@ -1,0 +1,32 @@
+# API y cola
+fastapi>=0.120
+uvicorn[standard]>=0.30
+redis>=6.0
+httpx>=0.27
+
+# Orquestador multi-agente (PE6) + checkpointer de Redis
+langchain-core>=1.8
+langgraph>=1.2
+langgraph-checkpoint-redis>=0.6
+
+# Observabilidad
+langsmith>=0.4
+
+# Proveedores de LLM (alcanza con el que configures en LLM_PROVIDER)
+langchain-google-genai>=4.4
+langchain-openai>=1.7
+langchain-anthropic>=1.7
+
+# Búsqueda: BM25 local sobre el corpus y búsqueda web opcional (si hay TAVILY_API_KEY)
+rank-bm25>=0.2.2
+langchain-tavily>=0.2
+
+# Utilidades
+pydantic>=2.7
+python-dotenv>=1.0
+
+# Tests offline (pytest). Van acá y no solo en requirements-dev.txt: en la PE6 el entorno del
+# corrector instaló requirements.txt y no encontró pytest.
+pytest>=9.0
+pytest-asyncio>=1.0
+fakeredis>=2.30

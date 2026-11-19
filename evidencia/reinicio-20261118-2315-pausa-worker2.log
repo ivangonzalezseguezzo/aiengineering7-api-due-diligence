@@ -1,0 +1,10 @@
+23:18:57 | INFO     | app.observability | Trazas activas en LangSmith, proyecto 'due-diligence-pe7-produccion'
+23:18:59 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:18:59 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:18:59 | INFO     | langgraph.checkpoint.redis.aio | Redis client is a standalone client
+23:18:59 | INFO     | due_diligence.corpus | Corpus: 120 fragmentos de 5 startups + mercado y fondo
+23:19:01 | INFO     | due_diligence.busqueda_web | Sin TAVILY_API_KEY: buscar_mercado usa el corpus local de mercado
+23:19:01 | INFO     | app.worker | Worker listo: hasta 5 jobs simultáneos
+23:19:02 | INFO     | app.worker | Job 1e25a2b7 (contralia) tomado de la cola: reanudar -> running
+23:19:04 | INFO     | app.worker | Job 1e25a2b7: se reanuda el hilo desde el checkpoint de Redis con la decisión 'aprobar'
+23:19:07 | INFO     | app.worker | Job 1e25a2b7: AVANZAR A COMITÉ -> done (aprobada por el comité)

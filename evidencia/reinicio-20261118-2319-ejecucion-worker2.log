@@ -1,0 +1,32 @@
+23:20:21 | INFO     | app.observability | Trazas activas en LangSmith, proyecto 'due-diligence-pe7-produccion'
+23:20:23 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:20:23 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:20:23 | INFO     | langgraph.checkpoint.redis.aio | Redis client is a standalone client
+23:20:23 | INFO     | due_diligence.corpus | Corpus: 120 fragmentos de 5 startups + mercado y fondo
+23:20:24 | INFO     | due_diligence.busqueda_web | Sin TAVILY_API_KEY: buscar_mercado usa el corpus local de mercado
+23:20:25 | WARNING  | app.worker | Se recuperaron 1 mensajes que un worker anterior no terminó
+23:20:25 | INFO     | app.worker | Worker listo: hasta 5 jobs simultáneos
+23:20:26 | INFO     | app.worker | Job 1ba6a6aa (anamnesis) tomado de la cola: iniciar -> running
+23:20:28 | WARNING  | app.worker | Job 1ba6a6aa: el hilo quedó a mitad de camino; se retoma desde el último checkpoint (próximo: analista)
+23:20:41 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19a-fcbc-76dc-b678-6429e7c8b863.')
+23:20:41 | INFO     | due_diligence.agents.react | analista, ronda 1: calcular_costo_llm, estimar_tamano_mercado
+23:20:48 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-3002-73d1-83d4-dc6222cf182b.')
+23:20:48 | INFO     | due_diligence.agents.react | analista, ronda 2: calcular_unit_economics
+23:20:51 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-48a6-752e-b049-32650ae160ed.')
+23:20:51 | INFO     | due_diligence.agents.react | analista, ronda 3: calcular_scoring
+23:21:03 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-5547-75b6-bebf-db87b5bc524f.')
+23:21:03 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 3: guarda aplicada (decisión determinística, sin LLM) -> critico
+23:21:13 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-85b9-763a-9115-d7f054cbeda8.')
+23:21:13 | INFO     | due_diligence.agents.react | critico, ronda 1: contrastar_metricas, buscar_evidencia, buscar_evidencia, buscar_evidencia, buscar_evidencia
+23:21:19 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-aa30-7688-b862-233183ec5b07.')
+23:21:19 | INFO     | due_diligence.agents.react | critico, ronda 2: registrar_observaciones
+23:21:26 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-c3cb-7238-a262-9f7119b8dbbd.')
+23:21:26 | INFO     | due_diligence.agents.react | critico, ronda 3: registrar_observaciones
+23:21:33 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-ddfb-7465-abdf-3987d1a29bb4.')
+23:21:33 | INFO     | due_diligence.agents.react | critico, ronda 4: registrar_observaciones
+23:21:39 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19b-f7d8-711b-8a15-1f8489da564e.')
+23:21:39 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 4: guarda aplicada (decisión determinística, sin LLM) -> finalizar
+23:21:42 | INFO     | app.worker | Job 1ba6a6aa: PROFUNDIZAR, caso crítico (recomendación positiva (PROFUNDIZAR): compromete capital o avanza de etapa) -> awaiting_approval; checkpoint en Redis
+23:21:45 | INFO     | app.worker | Job 1ba6a6aa (anamnesis) tomado de la cola: reanudar -> running
+23:21:46 | INFO     | app.worker | Job 1ba6a6aa: se reanuda el hilo desde el checkpoint de Redis con la decisión 'aprobar'
+23:21:49 | INFO     | app.worker | Job 1ba6a6aa: PROFUNDIZAR -> done (aprobada por el comité)

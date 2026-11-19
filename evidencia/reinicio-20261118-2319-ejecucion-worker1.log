@@ -1,0 +1,19 @@
+23:19:16 | INFO     | app.observability | Trazas activas en LangSmith, proyecto 'due-diligence-pe7-produccion'
+23:19:18 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:19:18 | INFO     | redisvl.index.index | Index already exists, not overwriting.
+23:19:18 | INFO     | langgraph.checkpoint.redis.aio | Redis client is a standalone client
+23:19:18 | INFO     | due_diligence.corpus | Corpus: 120 fragmentos de 5 startups + mercado y fondo
+23:19:19 | INFO     | due_diligence.busqueda_web | Sin TAVILY_API_KEY: buscar_mercado usa el corpus local de mercado
+23:19:20 | INFO     | app.worker | Worker listo: hasta 5 jobs simultáneos
+23:19:21 | INFO     | app.worker | Job 1ba6a6aa (anamnesis) tomado de la cola: iniciar -> running
+23:19:21 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 1: guarda aplicada (decisión determinística, sin LLM) -> investigador
+23:19:39 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f199-f93e-7481-b7b4-4087507f7d37.')
+23:19:39 | INFO     | due_diligence.agents.react | investigador, ronda 1: registrar_metricas
+23:19:49 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19a-3ae4-709c-9228-9fa4a6b9faf8.')
+23:19:49 | INFO     | due_diligence.agents.react | investigador, ronda 2: registrar_hallazgos
+23:19:59 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19a-64d1-76c7-b634-818e48dea032.')
+23:19:59 | INFO     | due_diligence.agents.react | investigador, ronda 3: registrar_hallazgos
+23:20:08 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19a-8a1b-7629-b427-9fada0e97791.')
+23:20:08 | INFO     | due_diligence.agents.react | investigador, ronda 4: registrar_hallazgos
+23:20:18 | WARNING  | langchain_core.callbacks.manager | Error in LangChainTracer.on_llm_end callback: TracerException('No indexed run ID 01a1f19a-ace0-7141-920c-1fa442074720.')
+23:20:18 | INFO     | due_diligence.agents.supervisor | Supervisor, paso 2: guarda aplicada (decisión determinística, sin LLM) -> analista

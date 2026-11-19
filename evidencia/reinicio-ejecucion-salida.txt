@@ -1,0 +1,34 @@
+[worker 1] iniciado (pid 1552, log evidencia\reinicio-20261118-2319-ejecucion-worker1.log)
+Job 1ba6a6aa2390443abf94d46a8a17e67b creado para anamnesis
+Estado antes del corte: running (el investigador ya terminó)
+[worker 1] MATADO (pid 1552)
+Con el worker caído, Redis conserva el job en 'running' (0 ejecuciones registradas)
+[worker 2] iniciado (pid 11536, log evidencia\reinicio-20261118-2319-ejecucion-worker2.log)
+El worker 2 retomó el análisis y llegó a 'awaiting_approval'
+Aprobado después del reinicio
+[worker 2] MATADO (pid 11536)
+
+Eventos del job:
+  ▶ comienza la due diligence de Anamnesis
+  [paso 1] supervisor → investigador: Resolvé este punto de la rúbrica: El investigador todavía no entregó datos.
+  motivo: Orden natural de la rúbrica: El investigador todavía no entregó datos. [guarda: decisión determinística, sin LLM]
+  investigador: v1: 21 métricas ancladas, 3 hallazgos, 4 registros rechazados
+  [paso 2] supervisor → analista: Resolvé este punto de la rúbrica: El analista todavía no calculó.
+  motivo: Orden natural de la rúbrica: El analista todavía no calculó. [guarda: decisión determinística, sin LLM]
+  ↻ se retoma desde el último checkpoint (próximo nodo: analista)
+  analista: v1: costo LLM USD 6.600/mes (13,8 % del MRR) · margen 62,3 % · LTV/CAC 2,60 · payback 19,3 m · runway 10,0 m · score 64,0 (profundizar); 0 llamadas rechazadas por falta de respaldo
+  [paso 3] supervisor → critico: Resolvé este punto de la rúbrica: El crítico todavía no auditó el análisis.
+  motivo: Orden natural de la rúbrica: El crítico todavía no auditó el análisis. [guarda: decisión determinística, sin LLM]
+  critico: v1 (auditó el análisis v1): 1 red flags (1 altas), 0 discrepancias declarado/calculado, 0 correcciones nuevas
+  [paso 4] supervisor → finalizar
+  motivo: La rúbrica no tiene puntos pendientes: se cierra. [guarda: decisión determinística, sin LLM]
+  validador: aprobada (intento 1, 0 advertencias)
+  informe: PROFUNDIZAR (score 64,0/100 (banda: profundizar); 1 red flags de severidad alta)
+  triage: riesgo alto; recomendación positiva (PROFUNDIZAR): compromete capital o avanza de etapa
+  ⏸ pausa: la recomendación espera la aprobación del comité
+  ▶ se reanuda con la decisión humana: aprobar
+  aprobacion: prueba de reinicio: aprobar
+  cierre: recomendación PROFUNDIZAR aprobada por el comité
+  ■ PROFUNDIZAR — aprobada por el comité
+
+Resultado: done · PROFUNDIZAR · decisión APROBADA

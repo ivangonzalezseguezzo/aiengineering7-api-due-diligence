@@ -1,0 +1,32 @@
+[worker 1] iniciado (pid 12508, log evidencia\reinicio-20261118-2315-pausa-worker1.log)
+Job 1e25a2b7869f499cb04a88ec8b84902d creado para contralia
+Estado antes del corte: awaiting_approval · recomendación AVANZAR A COMITÉ
+[worker 1] MATADO (pid 12508)
+Con el worker caído, Redis conserva el job en 'awaiting_approval' (1 ejecuciones registradas)
+[worker 2] iniciado (pid 1432, log evidencia\reinicio-20261118-2315-pausa-worker2.log)
+Aprobado después del reinicio
+[worker 2] MATADO (pid 1432)
+
+Eventos del job:
+  ▶ comienza la due diligence de Contralia
+  [paso 1] supervisor → investigador: Resolvé este punto de la rúbrica: El investigador todavía no entregó datos.
+  motivo: Orden natural de la rúbrica: El investigador todavía no entregó datos. [guarda: decisión determinística, sin LLM]
+  investigador: v1: 21 métricas ancladas, 4 hallazgos, 2 registros rechazados
+  [paso 2] supervisor → analista: Resolvé este punto de la rúbrica: El analista todavía no calculó.
+  motivo: Orden natural de la rúbrica: El analista todavía no calculó. [guarda: decisión determinística, sin LLM]
+  analista: v1: costo LLM USD 6.240/mes (7,3 % del MRR) · margen 71,3 % · LTV/CAC 5,79 · payback 9,6 m · runway 24,0 m · score 92,0 (avanzar a comité); 0 llamadas rechazadas por falta de respaldo
+  [paso 3] supervisor → critico: Resolvé este punto de la rúbrica: El crítico todavía no auditó el análisis.
+  motivo: Orden natural de la rúbrica: El crítico todavía no auditó el análisis. [guarda: decisión determinística, sin LLM]
+  critico: v1 (auditó el análisis v1): 0 red flags (0 altas), 0 discrepancias declarado/calculado, 0 correcciones nuevas
+  [paso 4] supervisor → finalizar
+  motivo: La rúbrica no tiene puntos pendientes: se cierra. [guarda: decisión determinística, sin LLM]
+  validador: aprobada (intento 1, 0 advertencias)
+  informe: AVANZAR A COMITÉ (score 92,0/100 (banda: avanzar a comité))
+  triage: riesgo alto; recomendación positiva (AVANZAR A COMITÉ): compromete capital o avanza de etapa
+  ⏸ pausa: la recomendación espera la aprobación del comité
+  ▶ se reanuda con la decisión humana: aprobar
+  aprobacion: prueba de reinicio: aprobar
+  cierre: recomendación AVANZAR A COMITÉ aprobada por el comité
+  ■ AVANZAR A COMITÉ — aprobada por el comité
+
+Resultado: done · AVANZAR A COMITÉ · decisión APROBADA

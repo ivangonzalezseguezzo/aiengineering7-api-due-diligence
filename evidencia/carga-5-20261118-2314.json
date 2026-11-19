@@ -1,0 +1,604 @@
+{
+  "fecha": "2026-11-18T23:14:57",
+  "resumen": {
+    "peticiones": 5,
+    "post_ms": {
+      "n": 5,
+      "p50": 1072.8,
+      "p95": 1083.8,
+      "max": 1084.2
+    },
+    "espera_cola_s": {
+      "n": 5,
+      "p50": 2.0,
+      "p95": 2.0,
+      "max": 2.0
+    },
+    "ejecucion_s": {
+      "n": 5,
+      "p50": 388.43,
+      "p95": 448.17,
+      "max": 453.66
+    },
+    "total_s": {
+      "n": 5,
+      "p50": 397.6,
+      "p95": 456.96,
+      "max": 464.0
+    },
+    "costo_usd": {
+      "total": 0.132589,
+      "promedio_por_analisis": 0.026518
+    },
+    "llamadas_llm": {
+      "total": 84,
+      "promedio": 16.8
+    },
+    "criticos": 3,
+    "estados": {
+      "done": 5
+    },
+    "modelos": [
+      "gemini-3.1-flash-lite",
+      "gemini-3.5-flash-lite"
+    ],
+    "lectura_del_dashboard": {
+      "tokens_por_agente": {
+        "investigador": {
+          "valor": 141517,
+          "pct": 41.5
+        },
+        "critico": {
+          "valor": 105219,
+          "pct": 30.8
+        },
+        "analista": {
+          "valor": 93339,
+          "pct": 27.4
+        },
+        "supervisor": {
+          "valor": 1200,
+          "pct": 0.4
+        }
+      },
+      "segundos_por_nodo": {
+        "investigador": {
+          "valor": 784.6,
+          "pct": 40.2
+        },
+        "analista": {
+          "valor": 576.0,
+          "pct": 29.5
+        },
+        "critico": {
+          "valor": 558.8,
+          "pct": 28.6
+        },
+        "supervisor": {
+          "valor": 24.5,
+          "pct": 1.3
+        },
+        "cierre": {
+          "valor": 3.3,
+          "pct": 0.2
+        },
+        "aprobacion": {
+          "valor": 1.9,
+          "pct": 0.1
+        },
+        "validador": {
+          "valor": 1.5,
+          "pct": 0.1
+        },
+        "informe": {
+          "valor": 0.8,
+          "pct": 0.0
+        },
+        "triage": {
+          "valor": 0.8,
+          "pct": 0.0
+        }
+      }
+    }
+  },
+  "analisis": [
+    {
+      "startup": "vozactiva",
+      "job_id": "d1b886ec3fff495aa184003be5a265c4",
+      "estado": "done",
+      "recomendacion": "NO AVANZAR",
+      "critico": false,
+      "decision_final": "EMITIDA SIN PAUSA",
+      "motivos_criticidad": [
+        "descarte claro: NO AVANZAR con score 41, a más de 5 puntos de cualquier umbral y con la validación sin salvedades"
+      ],
+      "error": null,
+      "post_ms": 161.3,
+      "espera_cola_s": 2.0,
+      "ejecucion_s": 321.18,
+      "hasta_decision_s": 325.0,
+      "total_s": 325.0,
+      "llamadas_llm": 16,
+      "tokens_entrada": 56946,
+      "tokens_salida": 5618,
+      "costo_usd": 0.023553,
+      "ejecuciones": [
+        {
+          "tipo": "iniciar",
+          "inicio": "2026-11-18T23:07:15-03:00",
+          "fin": "2026-11-18T23:12:36-03:00",
+          "latencia_s": 321.18,
+          "duracion_por_nodo_s": {
+            "supervisor": 1.26,
+            "investigador": 131.55,
+            "analista": 100.38,
+            "critico": 84.34,
+            "validador": 0.3,
+            "informe": 0.15,
+            "triage": 0.15,
+            "cierre": 0.92
+          },
+          "uso_llm": {
+            "por_agente": {
+              "analista": {
+                "llamadas": 6,
+                "tokens_entrada": 18303,
+                "tokens_salida": 1757,
+                "tokens_cache": 2002
+              },
+              "critico": {
+                "llamadas": 4,
+                "tokens_entrada": 17171,
+                "tokens_salida": 1161,
+                "tokens_cache": 2012
+              },
+              "investigador": {
+                "llamadas": 6,
+                "tokens_entrada": 21472,
+                "tokens_salida": 2700,
+                "tokens_cache": 10140
+              }
+            },
+            "por_modelo": {
+              "gemini-3.1-flash-lite": {
+                "llamadas": 4,
+                "tokens_entrada": 24080,
+                "tokens_salida": 3006,
+                "tokens_cache": 10140
+              },
+              "gemini-3.5-flash-lite": {
+                "llamadas": 12,
+                "tokens_entrada": 32866,
+                "tokens_salida": 2612,
+                "tokens_cache": 4014
+              }
+            },
+            "total": {
+              "llamadas": 16,
+              "tokens_entrada": 56946,
+              "tokens_salida": 5618,
+              "tokens_cache": 14154
+            }
+          },
+          "costo": {
+            "total_usd": 0.023553,
+            "por_modelo": {
+              "gemini-3.1-flash-lite": 0.008247,
+              "gemini-3.5-flash-lite": 0.015306
+            },
+            "sin_precio": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "startup": "contralia",
+      "job_id": "c85ecaadbc984e93bad1d48b2951d8ed",
+      "estado": "done",
+      "recomendacion": "AVANZAR A COMITÉ",
+      "critico": true,
+      "decision_final": "APROBADA",
+      "motivos_criticidad": [
+        "recomendación positiva (AVANZAR A COMITÉ): compromete capital o avanza de etapa"
+      ],
+      "error": null,
+      "post_ms": 1072.8,
+      "espera_cola_s": 2.0,
+      "ejecucion_s": 388.43,
+      "hasta_decision_s": 391.7,
+      "total_s": 397.6,
+      "llamadas_llm": 16,
+      "tokens_entrada": 69274,
+      "tokens_salida": 3416,
+      "costo_usd": 0.026508,
+      "ejecuciones": [
+        {
+          "tipo": "iniciar",
+          "inicio": "2026-11-18T23:07:16-03:00",
+          "fin": "2026-11-18T23:13:44-03:00",
+          "latencia_s": 388.43,
+          "duracion_por_nodo_s": {
+            "supervisor": 0.76,
+            "investigador": 183.38,
+            "analista": 70.74,
+            "critico": 129.87,
+            "validador": 0.3,
+            "informe": 0.15,
+            "triage": 0.15
+          },
+          "uso_llm": {
+            "por_agente": {
+              "analista": {
+                "llamadas": 4,
+                "tokens_entrada": 12277,
+                "tokens_salida": 796,
+                "tokens_cache": 0
+              },
+              "critico": {
+                "llamadas": 5,
+                "tokens_entrada": 20329,
+                "tokens_salida": 512,
+                "tokens_cache": 2004
+              },
+              "investigador": {
+                "llamadas": 7,
+                "tokens_entrada": 36668,
+                "tokens_salida": 2108,
+                "tokens_cache": 4058
+              }
+            },
+            "por_modelo": {
+              "gemini-3.1-flash-lite": {
+                "llamadas": 2,
+                "tokens_entrada": 16138,
+                "tokens_salida": 370,
+                "tokens_cache": 0
+              },
+              "gemini-3.5-flash-lite": {
+                "llamadas": 14,
+                "tokens_entrada": 53136,
+                "tokens_salida": 3046,
+                "tokens_cache": 6062
+              }
+            },
+            "total": {
+              "llamadas": 16,
+              "tokens_entrada": 69274,
+              "tokens_salida": 3416,
+              "tokens_cache": 6062
+            }
+          },
+          "costo": {
+            "total_usd": 0.026508,
+            "por_modelo": {
+              "gemini-3.1-flash-lite": 0.004589,
+              "gemini-3.5-flash-lite": 0.021919
+            },
+            "sin_precio": []
+          },
+          "error": null
+        },
+        {
+          "tipo": "reanudar",
+          "inicio": "2026-11-18T23:13:46-03:00",
+          "fin": "2026-11-18T23:13:51-03:00",
+          "latencia_s": 4.29,
+          "duracion_por_nodo_s": {
+            "aprobacion": 0.93,
+            "cierre": 0.62
+          },
+          "uso_llm": {
+            "por_agente": {},
+            "por_modelo": {},
+            "total": {
+              "llamadas": 0,
+              "tokens_entrada": 0,
+              "tokens_salida": 0,
+              "tokens_cache": 0
+            }
+          },
+          "costo": {
+            "total_usd": 0,
+            "por_modelo": {},
+            "sin_precio": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "startup": "aulaviva",
+      "job_id": "d116edb605f14f1697cc9ba4b7f605a2",
+      "estado": "done",
+      "recomendacion": "SIN RECOMENDACIÓN",
+      "critico": false,
+      "decision_final": "EMITIDA SIN PAUSA",
+      "motivos_criticidad": [
+        "abstención: no hay una decisión de capital que aprobar; el informe deriva a un analista y pide los datos faltantes"
+      ],
+      "error": null,
+      "post_ms": 415.0,
+      "espera_cola_s": 1.0,
+      "ejecucion_s": 426.23,
+      "hasta_decision_s": 428.8,
+      "total_s": 428.8,
+      "llamadas_llm": 16,
+      "tokens_entrada": 57113,
+      "tokens_salida": 3030,
+      "costo_usd": 0.023626,
+      "ejecuciones": [
+        {
+          "tipo": "iniciar",
+          "inicio": "2026-11-18T23:07:15-03:00",
+          "fin": "2026-11-18T23:14:21-03:00",
+          "latencia_s": 426.23,
+          "duracion_por_nodo_s": {
+            "supervisor": 1.53,
+            "investigador": 216.13,
+            "analista": 135.73,
+            "critico": 68.57,
+            "validador": 0.3,
+            "informe": 0.15,
+            "triage": 0.15,
+            "cierre": 1.1
+          },
+          "uso_llm": {
+            "por_agente": {
+              "analista": {
+                "llamadas": 5,
+                "tokens_entrada": 14883,
+                "tokens_salida": 864,
+                "tokens_cache": 0
+              },
+              "critico": {
+                "llamadas": 4,
+                "tokens_entrada": 13957,
+                "tokens_salida": 760,
+                "tokens_cache": 0
+              },
+              "investigador": {
+                "llamadas": 7,
+                "tokens_entrada": 28273,
+                "tokens_salida": 1406,
+                "tokens_cache": 4011
+              }
+            },
+            "por_modelo": {
+              "gemini-3.5-flash-lite": {
+                "llamadas": 16,
+                "tokens_entrada": 57113,
+                "tokens_salida": 3030,
+                "tokens_cache": 4011
+              }
+            },
+            "total": {
+              "llamadas": 16,
+              "tokens_entrada": 57113,
+              "tokens_salida": 3030,
+              "tokens_cache": 4011
+            }
+          },
+          "costo": {
+            "total_usd": 0.023626,
+            "por_modelo": {
+              "gemini-3.5-flash-lite": 0.023626
+            },
+            "sin_precio": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "startup": "anamnesis",
+      "job_id": "c999c037fd23438dac300da618db1087",
+      "estado": "done",
+      "recomendacion": "PROFUNDIZAR",
+      "critico": true,
+      "decision_final": "APROBADA",
+      "motivos_criticidad": [
+        "recomendación positiva (PROFUNDIZAR): compromete capital o avanza de etapa"
+      ],
+      "error": null,
+      "post_ms": 1084.2,
+      "espera_cola_s": 2.0,
+      "ejecucion_s": 373.02,
+      "hasta_decision_s": 376.5,
+      "total_s": 382.5,
+      "llamadas_llm": 14,
+      "tokens_entrada": 52600,
+      "tokens_salida": 3164,
+      "costo_usd": 0.020816,
+      "ejecuciones": [
+        {
+          "tipo": "iniciar",
+          "inicio": "2026-11-18T23:07:16-03:00",
+          "fin": "2026-11-18T23:13:29-03:00",
+          "latencia_s": 373.02,
+          "duracion_por_nodo_s": {
+            "supervisor": 0.62,
+            "investigador": 106.62,
+            "analista": 115.38,
+            "critico": 146.69,
+            "validador": 0.3,
+            "informe": 0.15,
+            "triage": 0.15
+          },
+          "uso_llm": {
+            "por_agente": {
+              "analista": {
+                "llamadas": 4,
+                "tokens_entrada": 12353,
+                "tokens_salida": 825,
+                "tokens_cache": 0
+              },
+              "critico": {
+                "llamadas": 5,
+                "tokens_entrada": 20564,
+                "tokens_salida": 516,
+                "tokens_cache": 2003
+              },
+              "investigador": {
+                "llamadas": 5,
+                "tokens_entrada": 19683,
+                "tokens_salida": 1823,
+                "tokens_cache": 0
+              }
+            },
+            "por_modelo": {
+              "gemini-3.1-flash-lite": {
+                "llamadas": 2,
+                "tokens_entrada": 12329,
+                "tokens_salida": 1717,
+                "tokens_cache": 0
+              },
+              "gemini-3.5-flash-lite": {
+                "llamadas": 12,
+                "tokens_entrada": 40271,
+                "tokens_salida": 1447,
+                "tokens_cache": 2003
+              }
+            },
+            "total": {
+              "llamadas": 14,
+              "tokens_entrada": 52600,
+              "tokens_salida": 3164,
+              "tokens_cache": 2003
+            }
+          },
+          "costo": {
+            "total_usd": 0.020816,
+            "por_modelo": {
+              "gemini-3.1-flash-lite": 0.005658,
+              "gemini-3.5-flash-lite": 0.015158
+            },
+            "sin_precio": []
+          },
+          "error": null
+        },
+        {
+          "tipo": "reanudar",
+          "inicio": "2026-11-18T23:13:31-03:00",
+          "fin": "2026-11-18T23:13:35-03:00",
+          "latencia_s": 4.29,
+          "duracion_por_nodo_s": {
+            "aprobacion": 0.93,
+            "cierre": 0.62
+          },
+          "uso_llm": {
+            "por_agente": {},
+            "por_modelo": {},
+            "total": {
+              "llamadas": 0,
+              "tokens_entrada": 0,
+              "tokens_salida": 0,
+              "tokens_cache": 0
+            }
+          },
+          "costo": {
+            "total_usd": 0,
+            "por_modelo": {},
+            "sin_precio": []
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "startup": "lupacode",
+      "job_id": "f2ea79da46654ce5a926ccebb6ab4210",
+      "estado": "done",
+      "recomendacion": "PROFUNDIZAR",
+      "critico": true,
+      "decision_final": "APROBADA",
+      "motivos_criticidad": [
+        "recomendación positiva (PROFUNDIZAR): compromete capital o avanza de etapa"
+      ],
+      "error": null,
+      "post_ms": 1082.2,
+      "espera_cola_s": 1.0,
+      "ejecucion_s": 453.66,
+      "hasta_decision_s": 458.1,
+      "total_s": 464.0,
+      "llamadas_llm": 22,
+      "tokens_entrada": 82554,
+      "tokens_salida": 7560,
+      "costo_usd": 0.038086,
+      "ejecuciones": [
+        {
+          "tipo": "iniciar",
+          "inicio": "2026-11-18T23:07:15-03:00",
+          "fin": "2026-11-18T23:14:49-03:00",
+          "latencia_s": 453.66,
+          "duracion_por_nodo_s": {
+            "supervisor": 20.35,
+            "investigador": 146.97,
+            "analista": 153.76,
+            "critico": 129.28,
+            "validador": 0.3,
+            "informe": 0.15,
+            "triage": 0.15
+          },
+          "uso_llm": {
+            "por_agente": {
+              "analista": {
+                "llamadas": 9,
+                "tokens_entrada": 29544,
+                "tokens_salida": 1737,
+                "tokens_cache": 0
+              },
+              "critico": {
+                "llamadas": 8,
+                "tokens_entrada": 28413,
+                "tokens_salida": 1836,
+                "tokens_cache": 4011
+              },
+              "investigador": {
+                "llamadas": 4,
+                "tokens_entrada": 23521,
+                "tokens_salida": 3863,
+                "tokens_cache": 0
+              },
+              "supervisor": {
+                "llamadas": 1,
+                "tokens_entrada": 1076,
+                "tokens_salida": 124,
+                "tokens_cache": 0
+              }
+            },
+            "por_modelo": {
+              "gemini-3.1-flash-lite": {
+                "llamadas": 2,
+                "tokens_entrada": 8486,
+                "tokens_salida": 4073,
+                "tokens_cache": 0
+              },
+              "gemini-3.5-flash-lite": {
+                "llamadas": 20,
+                "tokens_entrada": 74068,
+                "tokens_salida": 3487,
+                "tokens_cache": 4011
+              }
+            },
+            "total": {
+              "llamadas": 22,
+              "tokens_entrada": 82554,
+              "tokens_salida": 7560,
+              "tokens_cache": 4011
+            }
+          },
+          "costo": {
+            "total_usd": 0.038086,
+            "por_modelo": {
+              "gemini-3.1-flash-lite": 0.008231,
+              "gemini-3.5-flash-lite": 0.029855
+            },
+            "sin_precio": []
+          },
+          "error": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# docker compose up --build      -> API en http://localhost:8000/docs, worker y Redis 8
+#
+# Redis 8 trae Redis Query Engine y JSON, que necesita el checkpointer de LangGraph (RedisSaver).
+# El .env aporta las claves (LLM, LangSmith, API_KEY_APROBACION); REDIS_URL se pisa para usar el
+# Redis de este compose.
+
+services:
+  redis:
+    image: redis:8
+    command: ["redis-server", "--appendonly", "yes"]  # el estado sobrevive también al reinicio de Redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: .
+    env_file:
+      # Opcional: si falta el .env la API igual arranca (sin LLM ni trazas). Requiere Compose 2.24+.
+      - path: .env
+        required: false
+    environment:
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  redis-data:

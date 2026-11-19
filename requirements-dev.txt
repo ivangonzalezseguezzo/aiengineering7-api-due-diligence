@@ -1,0 +1,2 @@
+# Todo lo necesario (incluidos los tests) ya está en requirements.txt; este archivo queda por compatibilidad.
+-r requirements.txt

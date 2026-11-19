@@ -1,0 +1,29 @@
+INFO:     Started server process [18912]
+INFO:     Waiting for application startup.
+00:45:35 | INFO     | due_diligence.corpus | Corpus: 120 fragmentos de 5 startups + mercado y fondo
+00:45:35 | INFO     | app.observability | Trazas activas en LangSmith, proyecto 'due-diligence-pe7-produccion'
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:61399 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61401 - "POST /tasks HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61403 - "POST /tasks HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61405 - "POST /tasks HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61407 - "POST /tasks HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61410 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61415 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61418 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61420 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61422 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61424 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61426 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61431 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61433 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61435 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61437 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61439 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61441 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61443 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61445 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61448 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54882 - "GET /tasks/5c22a53fdd2e4c8f96c43bca8dcbbb0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54882 - "GET /favicon.ico HTTP/1.1" 404 Not Found
